@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
  },
 
  headerIcon: {
-  marginRight: 20,
+  marginRight: 18,
   backgroundColor: "lightpink",
 },
 
