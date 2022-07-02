@@ -12,7 +12,7 @@ export default function NotesScreen({ navigation }) {
  const [notes, setNotes] = useState([
    { title: "Walk the cat", done: false, id: "0" },
    { title: "Feed the elephant", done: false, id: "1" },
-   { title: "Play with dolphin", done: false, id: "2" },
+   
  ]);
 
  useEffect(() => {
