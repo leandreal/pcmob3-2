@@ -1,12 +1,22 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Entypo } from "@expo/vector-icons";
+import * as SQLite from "expo-sqlite";
+
+const db = SQLite.openDatabase("notes.db");
 
 
 function NotesScreen({ navigation }) {
+  
+  const [notes, setNotes] = useState([
+    { title: "Sleep", done: false, id: "0" }
+  ])
+  
+  
+  
   useEffect(() => {
     navigation.setOptions({
       headerRight: () => (
@@ -19,7 +29,8 @@ function NotesScreen({ navigation }) {
   });
 
   function addNote() {
-    console.log("Add Note");
+    let newNote = { title: "test", done: false, id: notes.length.toString()}
+    setNotes([...notes, newNote])
   }
 
 
