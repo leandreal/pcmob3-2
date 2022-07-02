@@ -43,8 +43,8 @@ export default function App() {
            headerStyle: {
              height: 120,
              backgroundColor: "yellow",
-             borderBottomColor: "#ccc",
-             borderBottomWidth: 1,
+             borderBottomColor: "grey",
+             borderBottomWidth: 5,
            },
          }}
        />
@@ -59,11 +59,12 @@ const styles = StyleSheet.create({
    backgroundColor: "#ffc",
    alignItems: "center",
    justifyContent: "center",
+   
  },
 
  headerIcon: {
   marginRight: 20,
-  backgroundColor: "lightpink",
+  backgroundColor: "lightgrey",
 },
 
 });
