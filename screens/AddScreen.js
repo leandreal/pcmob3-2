@@ -4,7 +4,7 @@ import { Text, View, TouchableOpacity } from "react-native";
 export default function AddScreen({ navigation }) {
  return (
    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-     <Text>AddScreen</Text>
+     <Text>This is the add screen.</Text>
      <TouchableOpacity
        onPress={() => navigation.goBack()}
        style={{ padding: 10 }}
