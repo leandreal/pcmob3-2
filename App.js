@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
 
  headerIcon: {
   marginRight: 20,
-  backgroundColor: "lightgrey",
+  backgroundColor: "lightpink",
 },
 
 });
