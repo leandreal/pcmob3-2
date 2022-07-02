@@ -13,6 +13,7 @@ function NotesScreen({ navigation }) {
         <TouchableOpacity onPress={addNote} style={styles.headerIcon}>
           <Entypo name="new-message" size={24} color="black" />
         </TouchableOpacity>
+           //entypo is how we add icons from vector icons.
       ),
     });
   });
