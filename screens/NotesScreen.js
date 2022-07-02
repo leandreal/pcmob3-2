@@ -8,11 +8,25 @@ import {
 } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 
-export default function NotesScreen({ navigation }) {
+export default function NotesScreen({ navigation, route }) {
  const [notes, setNotes] = useState([
    { title: "Walk the cat", done: false, id: "0" },
    { title: "Feed the elephant", done: false, id: "1" },
  ]);
+
+
+ useEffect(() => {
+  if (route.params?.text) {
+    const newNote = {
+      title: route.params.text,
+      done: false,
+      id: notes.length.toString(),
+    };
+    setNotes([...notes, newNote]);
+  }
+}, [route.params?.text]);
+
+
 
  useEffect(() => {
    navigation.setOptions({
