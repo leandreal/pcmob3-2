@@ -7,6 +7,10 @@ import {
  TouchableOpacity,
 } from "react-native";
 import { Entypo } from "@expo/vector-icons";
+import * as SQLite from "expo-sqlite";
+
+const db = SQLite.openDatabase("notes.db");
+
 
 export default function NotesScreen({ navigation, route }) {
  const [notes, setNotes] = useState([
@@ -25,7 +29,6 @@ export default function NotesScreen({ navigation, route }) {
     setNotes([...notes, newNote]);
   }
 }, [route.params?.text]);
-
 
 
  useEffect(() => {
