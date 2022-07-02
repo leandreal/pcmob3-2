@@ -1,7 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, FlatList } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Entypo } from "@expo/vector-icons";
 import * as SQLite from "expo-sqlite";
@@ -14,7 +14,6 @@ function NotesScreen({ navigation }) {
   const [notes, setNotes] = useState([
     { title: "Sleep", done: false, id: "0" }
   ])
-  
   
   
   useEffect(() => {
@@ -33,9 +32,21 @@ function NotesScreen({ navigation }) {
     setNotes([...notes, newNote])
   }
 
-
- return <View style={styles.container}></View>;
+function renderItem({ item }) {
+  return (
+    <View>
+      <Text>{item.title}</Text>
+    </View>
+  );
 }
+
+
+  return (
+  <View style={styles.container}>
+    <FlatList data={notes} renderItem={renderItem} />
+  </View>
+  );
+  }
 
 const Stack = createStackNavigator();
 
